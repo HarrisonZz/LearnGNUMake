@@ -7,6 +7,7 @@ var2 = hello$\
        world
 
 obj = hello.o
+TMP = tmp
 
 hello: $(obj)
 	gcc -o hello $(obj)
@@ -19,8 +20,10 @@ clean:
 	rm hello
 
 print:
-#	echo "${var1}"
-#	echo "${var2}"
-	echo $(SUB_MAKEFILE)
-	echo $(HOSTNAME)
-#	echo $(.INCLUDE_DIRS)
+	@export TMP
+#	@echo "${var1}"
+#	@echo "${var2}"
+	@echo $(SUB_MAKEFILE)
+	@echo "call env variable HOSTNAME: $(HOSTNAME)"
+	@echo "call temporary env variable TMP: $(TMP)"
+#	@echo $(.INCLUDE_DIRS)
