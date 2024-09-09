@@ -1,10 +1,8 @@
 obj = hello.o
 
-hello: $(obj)
-	gcc -o hello $(obj)
+hello: 
 
-$(obj): hello.c
-	gcc -c  hello.c -o $(obj)
+$(obj):
 
 .PHONY: clean
 clean:
