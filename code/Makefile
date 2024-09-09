@@ -1,11 +1,12 @@
-obj = hello
+obj = hello.o
 
-hello: $(obj).o
-	gcc -o $(obj) $(obj).o
+hello: $(obj)
+	gcc -o hello $(obj)
 
-hello.o: hello.c
-	gcc -c $(obj).c -o $(obj).o
+$(obj): hello.c
+	gcc -c  hello.c -o $(obj)
 
 .PHONY: clean
 clean:
-	rm *.o $(obj)
+	rm $(obj)
+	rm hello
