@@ -1,3 +1,4 @@
+INCLUDES = -I ./include/
 include ./include/makefile.mk 
 
 var1 = hello \
@@ -7,9 +8,10 @@ var2 = hello$\
 
 obj = hello.o
 
-hello: 
-
-$(obj):
+hello: $(obj)
+	gcc -o hello $(obj)
+$(obj): hello.c
+	gcc -c hello.c -o $(obj) $(INCLUDES)
 
 .PHONY: clean
 clean:
@@ -20,3 +22,4 @@ print:
 #	echo "${var1}"
 #	echo "${var2}"
 	echo $(SUB_MAKEFILE)
+#	echo $(.INCLUDE_DIRS)
