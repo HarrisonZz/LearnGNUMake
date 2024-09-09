@@ -28,5 +28,11 @@ print:
 	@echo "call temporary env variable TMP: $(TMP)"
 #	@echo $(.INCLUDE_DIRS)
 
-test.txt::
+test.txt:
 	touch test.txt
+
+test.txt:
+	touch test1.txt
+
+test.txt:
+	touch test2.txt
