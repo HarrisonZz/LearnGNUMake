@@ -27,3 +27,6 @@ print:
 	@echo "call env variable HOSTNAME: $(HOSTNAME)"
 	@echo "call temporary env variable TMP: $(TMP)"
 #	@echo $(.INCLUDE_DIRS)
+
+test.txt::
+	touch test.txt
