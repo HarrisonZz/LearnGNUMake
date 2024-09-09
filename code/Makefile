@@ -22,4 +22,5 @@ print:
 #	echo "${var1}"
 #	echo "${var2}"
 	echo $(SUB_MAKEFILE)
+	echo $(HOSTNAME)
 #	echo $(.INCLUDE_DIRS)
