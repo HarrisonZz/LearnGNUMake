@@ -1,3 +1,5 @@
+include ./include/makefile.mk 
+
 var1 = hello \
        world
 var2 = hello$\
@@ -15,5 +17,6 @@ clean:
 	rm hello
 
 print:
-	echo "$(var1)"
-	echo "$(var2)"
+#	echo "${var1}"
+#	echo "${var2}"
+	echo $(SUB_MAKEFILE)
