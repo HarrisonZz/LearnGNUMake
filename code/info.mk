@@ -1,7 +1,11 @@
+.SECONDEXPANSION:
 .PHONY: print
 
-hello = hi
-print:
-	$(info $(hello))
-	$(info $$(hello))
-
+#hello = hi
+objs = hello
+.PHONY: hello
+print: $$(objs)
+	@echo $^
+#	$(info $(hello))
+#	$(info $$(hello))
+objs = hello.c
